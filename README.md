@@ -165,3 +165,42 @@ python3 tools/build_autos.py luxus 02 08    # einzelne Luxus-Entwürfe
 ```
 
 `tools/autos.py` enthält die Fahrzeug-Silhouetten (9 Karosserieformen: Coupé, Hatchback, Limousine, Roadster, Keilform, Mittelmotor, GT, Klassiker, Hypercar), die Räder, die Uhr, das Steckauto und die Zinkenbox. Die Entwürfe selbst stehen in `tools/jdm.py` und `tools/lux.py`.
+
+---
+
+# Themenserien: Vater, Mutter, Oma, Opa, Versicherung, Finanzen
+
+Sechsmal zehn Entwürfe für den **xTool D1 Pro 10W** und 3 mm Sperrholz. Farben, Laserwerte und Schneidreihenfolge wie oben. Jeder Ordner unter `entwuerfe/<serie>/` enthält SVG, Laservorschau und Mockup. Sets, die nicht auf eine Arbeitsfläche passen, sind auf mehrere Dateien `…_platte1.svg`, `…_platte2.svg` verteilt.
+
+| Serie | Übersicht | Entwürfe |
+|-------|-----------|----------|
+| **Vater** | `entwuerfe/vater/uebersicht_vater.jpg` | Wandschild Papas Werkstatt · Wanduhr Papa-Zeit · Untersetzer (Grill, Bier, Angeln, Werkzeug) · 6 Schlüsselanhänger · Medaille Bester Papa · Bilderrahmen Papa & ich · 3D-Pokal · Handyhalter Sofa-Kommando · Kiste Papas Kram · Bier-Flaschenanhänger |
+| **Mutter** | `entwuerfe/mutter/uebersicht_mutter.jpg` | Herzschild Mama · Familien-Herz-Puzzle mit Namen · Untersetzer (Kaffee, Herz, Blume, Sonne) · 6 Schlüsselanhänger · Bilderrahmen · Laterne Danke Mama · Schmuckkiste mit Deckel · 3 Lesezeichen · Rezeptständer Mamas Küche · Holzkarte A6 mit ausgeschnittener Schrift |
+| **Oma** | `entwuerfe/oma/uebersicht_oma.jpg` | Wandschild Omas Küche · Rezeptständer · Untersetzer (Kaffee, Kuchen, Wolle, Garten) · 3 Gartenstecker · Bilderrahmen · Stammbaum Omas Enkel (12 Namen) · 6 Schlüsselanhänger · Laterne Beste Oma · Nähkästchen mit Deckel & Trennwand · Wanduhr Kaffeezeit |
+| **Opa** | `entwuerfe/opa/uebersicht_opa.jpg` | Wandschild „Der Mann, der Mythos, die Legende“ · Wanduhr mit römischen Ziffern · Untersetzer (Angeln, Schach, Bier, Werkstatt) · Mühle-Spiel mit 18 Steinen · Bilderrahmen · Brillenständer · 6 Schlüsselanhänger · Medaille Bester Opa · Fernbedienungsbox · 3 Lesezeichen |
+| **Versicherung** | `entwuerfe/versicherung/uebersicht_versicherung.jpg` | Tischschild Ansprechpartner · Visitenkartenhalter · Stiftehalter (Wohnen, Mobilität, Schutz, Familie) · Untersetzer · 6 Schlüsselanhänger als Kundengeschenk · Wandschild Gut abgesichert · Wanduhr Zeit für Vorsorge · Notfall-Tafel (110 · 112 · 116 117 + Felder zum Ausfüllen) · Karteibox A6 mit 4 Trennwänden · Laterne Sicher zuhause |
+| **Finanzen** | `entwuerfe/finanzen/uebersicht_finanzen.jpg` | Spardose mit Münzschlitz · 52-Wochen-Spar-Challenge (1.378 €) · Steckfigur Sparschwein · Untersetzer (Sparen, Planen, Sichern, Glück) · 6 Schlüsselanhänger · Wanduhr Zeit ist Geld · Budget-Box (Umschlag-Methode, 5 Trennwände) · Geldbaum für Geldgeschenke · Wandschild Kleinvieh macht auch Mist · 3 Lesezeichen |
+
+## Tipps zu den Themenserien
+
+- **Namen und Texte ändern:** Alle Texte stehen in `tools/themen.py`, z. B. die Namen im Herz-Puzzle, im Stammbaum (`NAMEN`) oder auf dem Tischschild („Max Mustermann“). Danach `python3 tools/build_themen.py <serie>` ausführen.
+- **Bilderrahmen:** für Fotos 10 × 15 cm. Das Foto liegt zwischen Front und Rückwand. Beide Teile mit ein paar Tropfen Leim am Rand oder mit Klammern verbinden. Die Zunge des Aufstellers steckt im Schlitz der Rückwand.
+- **Steckteile** (Pokal, Sparschwein, Geldbaum, Tischschild, Visitenkartenhalter, Brillenständer, Ständer): Schlitze sind auf 2,9 mm ausgelegt, also vorher den Passungstest aus der Weihnachtsserie schneiden.
+- **Kisten mit Deckel:** Unter den Deckel wird die etwas kleinere Platte „Deckel innen“ geklebt. Sie hält den Deckel auf der Kiste. Die Trennwände werden eingeklebt.
+- **Medaillen:** Durch den Schlitz oben passt ein Band bis 25 mm Breite.
+- **Herz-Puzzle:** Die Teile sind einzeln angeordnet. Die Puzzle-Nasen sind 7 mm groß.
+- **Holzkarte:** Die Schrift wird ausgeschnitten. Innenräume von Buchstaben (z. B. bei „a“ oder „e“) fallen dabei heraus.
+- **Gartenstecker:** Für draußen mit Bootslack oder Leinöl versiegeln.
+- **Versicherung:** Die Entwürfe sind bewusst neutral gehalten, ohne Firmenlogo und ohne Werbeversprechen. Bei Kundengeschenken bitte die Vorgaben deines Arbeitgebers und die geltenden Regeln zu Zuwendungen beachten. Die Notfall-Tafel enthält die bundesweiten Nummern 110, 112 und 116 117, die übrigen Felder sind zum Ausfüllen.
+- **Finanzen:** Die Motive sind allgemeine Spar- und Ordnungshilfen und keine Anlageberatung.
+- **Laternen:** ⚠️ Nur LED-Teelichter verwenden!
+
+## Themen-Dateien neu erzeugen
+
+```bash
+python3 tools/build_themen.py                 # alle sechs Serien
+python3 tools/build_themen.py oma             # eine Serie
+python3 tools/build_themen.py vater 03 07     # einzelne Entwürfe
+```
+
+Die Bausteine sind `tools/motive.py` (45 Icons), `tools/geschenke.py` (Produkt-Vorlagen wie Schild, Uhr, Untersetzer, Rahmen, Kiste, Laterne, Puzzle, Stammbaum, Mühle oder Geldbaum) und `tools/themen.py` (die 60 Entwürfe).

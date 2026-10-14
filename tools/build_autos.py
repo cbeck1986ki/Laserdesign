@@ -153,15 +153,16 @@ def mock_phone_stand(parts, bg, title, sub, sc=5.6, screen=(40, 110, 200)):
     ground = int(H * 0.84)
     # Seitenansicht links: Fuss + Rueckwand als schraeges Brett + Handy
     b, pxb = R.render_part(pb, sc, seed=120)
-    bx = 120 - pxb(22, 0)[0] + 60
+    k = (pb.solid.bounds[2] - pb.solid.bounds[0]) / 96.0      # Skalierung des Staenders (1 = Handy)
+    bx = 120 - pxb(22 * k, 0)[0] + 60
     by = ground - pxb(0, 0)[1]
     sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ImageDraw.Draw(sh).ellipse([bx + 40, ground - 20, bx + b.width + 40, ground + 26], fill=(0, 0, 0, 140))
     c.alpha_composite(sh.filter(ImageFilter.GaussianBlur(16)))
     import jdm
     a = math.radians(jdm.ANG)
-    P0 = (bx + pxb(44, 0)[0], ground)
-    L = 116 * sc
+    P0 = (bx + pxb(44 * k, 0)[0], ground)
+    L = (pa.solid.bounds[3] - pa.solid.bounds[1]) * sc
     d = ImageDraw.Draw(c)
     edge = [(P0[0], P0[1]), (P0[0] + L * math.cos(a), P0[1] - L * math.sin(a))]
     tA = MAT * sc
@@ -170,8 +171,8 @@ def mock_phone_stand(parts, bg, title, sub, sc=5.6, screen=(40, 110, 200)):
               fill=(196, 160, 112))
     # Handy (seitlich) lehnt vorn an der Rueckwand
     ph_t = 9 * sc
-    ph_L = 150 * sc
-    p0 = (P0[0] - 15 * sc, ground - 6 * sc)
+    ph_L = (150 if k < 1.2 else 240) * sc
+    p0 = (P0[0] - 15 * sc * k, ground - 6 * sc)
     q0 = (p0[0] + ph_L * math.cos(a), p0[1] - ph_L * math.sin(a))
     d.polygon([p0, q0, (q0[0] + math.sin(a) * ph_t, q0[1] + math.cos(a) * ph_t),
                (p0[0] + math.sin(a) * ph_t, p0[1] + math.cos(a) * ph_t)], fill=(30, 32, 36))
@@ -187,7 +188,7 @@ def mock_phone_stand(parts, bg, title, sub, sc=5.6, screen=(40, 110, 200)):
     # Fuss von vorn: schmale Kante
     d = ImageDraw.Draw(c)
     cx = fx + img.width / 2
-    d.rectangle([cx - tA / 2, ground - 14 * sc, cx + tA / 2, ground], fill=(176, 140, 96))
+    d.rectangle([cx - tA / 2, ground - 14 * sc * k, cx + tA / 2, ground], fill=(176, 140, 96))
     c.alpha_composite(img, (int(fx), int(fy)))
     R.label(c, title, sub)
     return c
