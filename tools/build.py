@@ -101,7 +101,8 @@ def mock_stars(parts):
     return c
 
 
-def mock_lantern(parts):
+def mock_lantern(parts, title="Teelicht-Laterne „Winterdorf“",
+                 sub="90 × 90 × 110 mm · Fingerzinken · nur für LED-Teelichter"):
     front_p, side_p = parts[0], parts[2]
     c = R.background(W, H, 9, c1=(22, 26, 44), c2=(5, 6, 12), bokeh=45, table=0.80)
     sc = 6.0
@@ -145,8 +146,7 @@ def mock_lantern(parts):
     bloom = Image.new("RGBA", (W, H), (255, 170, 80, 0))
     bloom.putalpha(lum.filter(ImageFilter.GaussianBlur(14)).point(lambda v: int(v * 0.55)))
     c.alpha_composite(bloom)
-    R.label(c, "Teelicht-Laterne „Winterdorf“",
-            "90 × 90 × 110 mm · Fingerzinken · nur für LED-Teelichter")
+    R.label(c, title, sub)
     return c
 
 

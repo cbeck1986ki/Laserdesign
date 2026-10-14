@@ -57,3 +57,50 @@ python3 tools/build.py
 - `tools/render.py` und `tools/build.py`: Mockups und Vorschauen
 
 Die Schriften *Great Vibes* und *Berkshire Swash* stehen unter der SIL Open Font License (siehe `tools/fonts/`).
+
+---
+
+# Saaletal-Serie: Hammelburg, Bad Kissingen und die Fränkische Saale
+
+Zehn weitere Entwürfe mit regionalem Bezug, ebenfalls für den **xTool D1 Pro 10W** und **3 mm Pappel- oder Lindensperrholz**. Farben, Laserwerte und Schneidreihenfolge wie oben.
+
+![Übersicht Saaletal](entwuerfe/saaletal/uebersicht_saaletal.jpg)
+
+| # | Entwurf | Teile | Maße (mm) | Datei |
+|---|---------|-------|-----------|-------|
+| 1 | Wandschild „Skyline Saaletal“: Hohntor, Kurstadt-Kirchen, Arkaden, Trimburg, Hammelburg, Schloss Saaleck mit Weinberg | 1 | 380 × 100 | `entwuerfe/saaletal/01_skyline-saaletal/` |
+| 2 | Flusskarte „Fränkische Saale“: 11 Orte von der Quelle bis Gemünden, Rhön, Main, Kompass | 1 | 300 × 215 | `entwuerfe/saaletal/02_flusskarte-saale/` |
+| 3 | Wanduhr „Saaletal-Zeit“: 12 Saale-Orte statt Ziffern, Mini-Skyline | 1 | Ø 260 | `entwuerfe/saaletal/03_wanduhr-saaletal/` |
+| 4 | Untersetzer-Set: Hammelburg, Bad Kissingen, Schloss Saaleck, Fränkische Saale | 4 | je Ø 95 | `entwuerfe/saaletal/04_untersetzer-saaletal/` |
+| 5 | Bocksbeutel-Flaschenanhänger: „Hammelburg“, „Zum Wohl!“, „Schloss Saaleck“ | 3 | 60 × 129 | `entwuerfe/saaletal/05_bocksbeutel-anhaenger/` |
+| 6 | Schlüsselanhänger im Ortstafel-Stil (6 Orte) | 6 | 72 × 30 | `entwuerfe/saaletal/06_ortsschild-anhaenger/` |
+| 7 | Lesezeichen: Weinrebe, Arkaden, Kanu auf der Saale | 3 | 40 × 150 | `entwuerfe/saaletal/07_lesezeichen/` |
+| 8 | Christbaumanhänger mit Durchbruch: Hammelburg, Bad Kissingen, Saaleck, Trimburg | 4 | Ø 80 | `entwuerfe/saaletal/08_christbaumanhaenger/` |
+| 9 | Steckfigur „Hammelburger Rhönschaf“ mit Bodenplatte | 2 | 114 × 80 / 132 × 58 | `entwuerfe/saaletal/09_steckfigur-rhoenschaf/` |
+| 10 | Teelicht-Laterne „Kurstadt“: Arkaden, Zwiebelkuppel, Doppeltürme, Gradierbau-Seiten | 5 | 90 × 90 × 110 | `entwuerfe/saaletal/10_laterne-kurstadt/` |
+
+Jeder Ordner enthält die laserfertige SVG, eine Laservorschau (PNG) und ein Mockup (JPG). Alle Arbeitsflächen passen auf den D1 Pro.
+
+Die Gebäude sind **stilisierte Silhouetten**, keine maßstabsgetreuen Ansichten. Wappen und Logos der Städte sind bewusst nicht verwendet.
+
+## Tipps zur Saaletal-Serie
+
+1. **Skyline:** Zwei Löcher mit Ø 5 mm zum Aufhängen. Mit einem LED-Streifen hinter dem Schild entsteht ein schöner Lichtsaum an der Wand.
+2. **Flusskarte:** Die Orte sind nach echten Koordinaten platziert. Der Fluss ist eine Flächengravur und wird zur Mündung hin breiter. Auf großen Flächen lohnt sich Malerkrepp gegen Rauchspuren.
+3. **Wanduhr:** Das Mittelloch hat Ø 8 mm, passend für gängige Quarzuhrwerke mit Gewindehals für 3–5 mm Zifferblattstärke.
+4. **Untersetzer:** Nach dem Gravieren mit Hartwachsöl oder Klarlack versiegeln, sonst ziehen Ränder von Gläsern ein.
+5. **Bocksbeutel-Anhänger:** Der Ring (Ø 34 mm) rutscht über den Hals einer 0,75-l-Flasche. Auf der Rückseite ist Platz für einen Gruß.
+6. **Ortsschild-Anhänger:** Wer möchte, lackiert das Schild gelb und lässt die Gravur dunkel, dann sieht es aus wie eine echte Ortstafel. Das Loch hat Ø 5,4 mm für Schlüsselringe. Weitere Orte lassen sich in `KEY_TOWNS` in `tools/saaletal.py` eintragen.
+7. **Lesezeichen:** Das Loch oben ist für eine Quaste gedacht. Die feinen Durchbrüche nicht zu stark biegen.
+8. **Christbaumanhänger:** Die Szenen sind Durchbrüche. Vor einem Licht oder Fenster wirken sie wie Scherenschnitte.
+9. **Rhönschaf:** Die Zapfen unter den Beinen stecken in den Schlitzen der Bodenplatte (2,9 mm). Mit dem **Passungstest** aus Entwurf 2 der Weihnachtsserie lässt sich die Schlitzbreite vorher prüfen. Bei zu lockerem Sitz hilft ein Tropfen Leim. Den Kopf schwärzt die Flächengravur, genau wie beim echten Rhönschaf.
+10. **Laterne:** Gleiche Fingerzinken wie die „Winterdorf“-Laterne, Boden mit Ø-22-mm-Loch. ⚠️ **Nur LED-Teelichter verwenden!**
+
+## Saaletal-Dateien neu erzeugen
+
+```bash
+python3 tools/build_saaletal.py            # alle zehn
+python3 tools/build_saaletal.py 03 07      # nur einzelne Entwürfe
+```
+
+`tools/saaletal.py` enthält Formen, Texte und Ortslisten, `tools/build_saaletal.py` die Mockups. Die Ortsnamen sind mit *Inter Bold* gesetzt (SIL Open Font License, siehe `tools/fonts/OFL-Inter.txt`).
