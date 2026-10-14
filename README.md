@@ -57,3 +57,9 @@ python3 tools/build.py
 - `tools/render.py` und `tools/build.py`: Mockups und Vorschauen
 
 Die Schriften *Great Vibes* und *Berkshire Swash* stehen unter der SIL Open Font License (siehe `tools/fonts/`).
+
+---
+
+## Neu: T-Shirt-Motive für den Silhouette Cameo
+
+Acht einfarbige Plotter-Motive für IT- und KI-Fans zum Aufbügeln mit Flex- oder Flockfolie. Sie liegen als SVG, DXF und PNG vor: siehe [`tshirt-plotter/`](tshirt-plotter/README.md).
