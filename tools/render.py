@@ -5,6 +5,8 @@ import random
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
+from shapely.geometry import Polygon
+
 from lasergeo import FONT_DIR, polys
 
 SS = 3  # Supersampling
@@ -17,7 +19,8 @@ def _mask(geom, bounds, scale, pad):
     im = Image.new("L", (w * SS, h * SS), 0)
     d = ImageDraw.Draw(im)
     t = lambda c: [((x - x0) * scale * SS, (y - y0) * scale * SS) for x, y in c]
-    for p in polys(geom):
+    # groesste zuerst: kleinere Flaechen in Loechern groesserer werden danach wieder gefuellt
+    for p in sorted(polys(geom), key=lambda q: -Polygon(q.exterior).area):
         d.polygon(t(p.exterior.coords), fill=255)
         for i in p.interiors:
             d.polygon(t(i.coords), fill=0)

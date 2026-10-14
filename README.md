@@ -104,3 +104,64 @@ python3 tools/build_saaletal.py 03 07      # nur einzelne Entwürfe
 ```
 
 `tools/saaletal.py` enthält Formen, Texte und Ortslisten, `tools/build_saaletal.py` die Mockups. Die Ortsnamen sind mit *Inter Bold* gesetzt (SIL Open Font License, siehe `tools/fonts/OFL-Inter.txt`).
+
+---
+
+# Auto-Serien: JDM und Luxus-Sportwagen
+
+Zweimal zehn Entwürfe für Autoliebhaber, ebenfalls für den **xTool D1 Pro 10W** und 3 mm Sperrholz. Farben, Laserwerte und Schneidreihenfolge wie oben. Jeder Ordner enthält SVG, Laservorschau und Mockup.
+
+**Wichtig:** Alle Fahrzeuge sind frei gezeichnete, **generische Silhouetten**. Sie enthalten keine Markennamen, Logos, Embleme oder Modellbezeichnungen. Für den Verkauf sollte das so bleiben, denn Automarken und Modellnamen sind geschützt.
+
+## JDM-Serie
+
+![Übersicht JDM](entwuerfe/jdm/uebersicht_jdm.jpg)
+
+| # | Entwurf | Teile | Maße (mm) |
+|---|---------|-------|-----------|
+| 1 | Wandschild „Touge“: Passstraße in Serpentinen, Retro-Sonne, 90er-Coupé mit Heckflügel, 峠 | 1 | 360 × 148 |
+| 2 | Wanduhr „Drehzahlmesser“: 1–12 als ×1000 r/min, roter Bereich ab 10 | 1 | Ø 260 |
+| 3 | Untersetzer „Garage“: Turbo, Felge, 6-Gang-Schaltschema, Kolben (mit Katakana) | 4 | Ø 95 |
+| 4 | Schlüsselanhänger: japanisches Kennzeichen, Turbo, Kolben, Schaltknauf, Felge, Coupé | 6 | 26–78 |
+| 5 | Omamori-Rückspiegelanhänger: 交通安全 (Verkehrssicherheit), 必勝 (Sieg), 開運 (Glück) | 3 | 46 × 83 |
+| 6 | Rundbild „Drift“: Seigaiha-Wellen, Sonne, driftendes Coupé, ドリフト | 1 | Ø 240 |
+| 7 | 3D-Steckauto Coupé mit Startnummer 86 | 3 | 180 lang |
+| 8 | Handyhalter „JDM“ (Rückwand + Fuß, 68° Neigung) | 2 | 84 × 116 / 96 × 69 |
+| 9 | Wandschild im Stil japanischer Nummernschilder („東京 300 / な 20-26“) | 1 | 330 × 165 |
+| 10 | Laterne „Tokyo Night“: Skyline mit leuchtenden Fenstern, Passstraße, Torii vor dem Fuji | 5 | 90 × 90 × 110 |
+
+## Luxus-Sportwagen-Serie
+
+![Übersicht Luxus](entwuerfe/luxus/uebersicht_luxus.jpg)
+
+| # | Entwurf | Teile | Maße (mm) |
+|---|---------|-------|-----------|
+| 1 | Wandschild „Pure Performance“: Mittelmotor-Supersportler, Rennlinie, Zielflagge | 1 | 380 × 124 |
+| 2 | Wanduhr „Tacho“: 20–240 km/h statt Ziffern, Kilometerzähler | 1 | Ø 260 |
+| 3 | Untersetzer „Rennsport“: Startnummern-Rondelle 1, 24, 7, 99 mit Rennstreifen | 4 | Ø 95 |
+| 4 | Schlüsselanhänger: Lenkrad, offene Schaltkulisse, Zielflagge, Schlüssel-Fob, V12, Hypercar | 6 | 40–80 |
+| 5 | 3D-Steckauto Supersportwagen | 3 | 190 lang |
+| 6 | Rennstrecken-Wandbild: fiktiver Grand-Prix-Kurs mit 13 Kurven | 1 | 300 × 215 |
+| 7 | Schlüsselbox „Keys“ mit Fingerzinken | 5 | 150 × 80 × 56 |
+| 8 | Modellauto-Display für Modelle 1:43 (Bodenplatte + gesteckte Rückwand) | 2 | 180 × 76 × 89 |
+| 9 | Lesezeichen mit Durchbruch: Gran Turismo, Klassiker, Hypercar | 3 | 40 × 170 |
+| 10 | Laterne „Garage“: Supersportler vor dem Garagentor, Klassiker, Luftschlitze | 5 | 90 × 90 × 110 |
+
+## Tipps zu den Auto-Serien
+
+- **Steckautos:** Das Seitenteil hat an beiden Rädern einen Schlitz von unten, die Achsteile einen von oben. Beides ist auf 2,9 mm ausgelegt, also vorher den Passungstest aus der Weihnachtsserie schneiden.
+- **Handyhalter:** Die Rückwand wird von oben in den schrägen Schlitz des Fußes geschoben. Das Handy steht vorn auf der Nase des Fußes. Für Handys bis etwa 10 mm Dicke mit Hülle.
+- **Uhren:** Das Mittelloch hat Ø 8 mm für gängige Quarzuhrwerke. Rote Zeiger passen besonders gut zur Instrumenten-Optik.
+- **Schaltkulisse (Luxus 4):** Die H-Kulisse ist komplett ausgeschnitten. Mit der Linie nach unten aufgelegt, sieht der Anhänger aus wie eine Alu-Kulisse.
+- **Modellauto-Display:** Die zwei Zapfen der Rückwand stecken in den Schlitzen der Bodenplatte. Der Text auf dem Namensschild lässt sich in `tools/lux.py` ändern.
+- **Japanische Schriftzeichen:** Sie sind mit *IPAGothic* gesetzt (IPA Font License, siehe `tools/fonts/IPA_Font_License.txt`), die sportlichen Überschriften mit *Inter Display Black Italic* (OFL). Alle Texte sind bereits in Pfade umgewandelt.
+- **Laternen:** ⚠️ Nur LED-Teelichter verwenden!
+
+## Auto-Dateien neu erzeugen
+
+```bash
+python3 tools/build_autos.py jdm            # alle JDM-Entwürfe
+python3 tools/build_autos.py luxus 02 08    # einzelne Luxus-Entwürfe
+```
+
+`tools/autos.py` enthält die Fahrzeug-Silhouetten (9 Karosserieformen: Coupé, Hatchback, Limousine, Roadster, Keilform, Mittelmotor, GT, Klassiker, Hypercar), die Räder, die Uhr, das Steckauto und die Zinkenbox. Die Entwürfe selbst stehen in `tools/jdm.py` und `tools/lux.py`.
