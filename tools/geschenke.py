@@ -97,7 +97,7 @@ def plaque(name, W, H, shape="rect", txt=(), ico=(), holes=2, border=True, extra
 def clock(name, R=130.0, numbers="arabic", font=DECO, labels=None, ico=(), txt=(), ticks=True, rim_icons=None):
     g = circle(0, 0, R, 128).difference(circle(0, 0, 4.0))
     eng = []
-    roman = ["XII", "I", "II", "III", "IIII", "V", "VI", "VII", "VIII", "IX", "X", "XI"]
+    roman = ["XII", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI"]
     for i in range(12):
         a = -90 + 30 * i
         if labels and labels[i]:
