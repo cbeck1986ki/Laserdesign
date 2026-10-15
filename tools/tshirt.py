@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from lasergeo import _FlatPen, _font, circle, polys  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "tshirt-plotter"
+OUT = ROOT / "tshirt-plotter" / "serie1_it-ki"
 
 MIN_HOLE = 3.0     # mm^2: kleinere Loecher werden zugefuellt (lassen sich nicht entgittern)
 MIN_ISLAND = 3.0   # mm^2: kleinere Inseln fliegen raus (halten nicht auf dem Stoff)

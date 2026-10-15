@@ -62,4 +62,4 @@ Die Schriften *Great Vibes* und *Berkshire Swash* stehen unter der SIL Open Font
 
 ## Neu: T-Shirt-Motive für den Silhouette Cameo
 
-Acht einfarbige Plotter-Motive für IT- und KI-Fans zum Aufbügeln mit Flex- oder Flockfolie. Sie liegen als SVG, DXF und PNG vor: siehe [`tshirt-plotter/`](tshirt-plotter/README.md).
+28 einfarbige Plotter-Motive zum Aufbügeln mit Flex- oder Flockfolie, als SVG, DXF und PNG: IT & KI (Serie 1 und 2) sowie Versicherung für Gewerbe & Landwirtschaft (Serie 3). Siehe [`tshirt-plotter/`](tshirt-plotter/README.md).
