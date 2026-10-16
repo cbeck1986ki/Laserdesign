@@ -57,3 +57,33 @@ python3 tools/build.py
 - `tools/render.py` und `tools/build.py`: Mockups und Vorschauen
 
 Die Schriften *Great Vibes* und *Berkshire Swash* stehen unter der SIL Open Font License (siehe `tools/fonts/`).
+
+---
+
+# Gelayerte Weltkarte (5 Schichten)
+
+![Weltkarte Mockup](entwuerfe/06_weltkarte-layered/06_weltkarte_mockup.jpg)
+
+Eine 3D-Weltkarte mit rechteckigem Rahmen, **400 × 183 mm**, aus 5 Lagen **3 mm Sperrholz** (zusammen 15 mm dick). Die Meeresschichten haben organische Tiefenlinien. Jede Schicht ist eine eigene SVG und passt allein auf die Arbeitsfläche.
+
+| Schicht | Inhalt | Datei | Farbidee |
+|---------|--------|-------|----------|
+| 1 | Grundplatte (tiefstes Meer) | `06_weltkarte_schicht1.svg` | dunkles Violett |
+| 2 | Meer tief + Rahmen | `06_weltkarte_schicht2.svg` | Violett |
+| 3 | Meer mittel + Rahmen | `06_weltkarte_schicht3.svg` | Flieder |
+| 4 | Meer flach + Rahmen | `06_weltkarte_schicht4.svg` | helles Lavendel |
+| 5 | Rahmen + 75 Land-Teile mit Ländergrenzen (Linie) und Seen (Gravur) | `06_weltkarte_schicht5.svg` | Holz natur |
+| – | 2 Aufsteller (Schlitz 15,3 mm, 8° geneigt) | `06_weltkarte_aufsteller.svg` | – |
+
+Alle Dateien liegen in `entwuerfe/06_weltkarte-layered/`. Die Übersicht aller Schichten steht in `06_weltkarte_schichten.png`.
+
+**Zusammenbau:** Bemal die Schichten 1 bis 4 vor dem Verleimen, am besten mit Beize oder verdünnter Acrylfarbe, damit die Maserung durchscheint. Danach verleimst du die Schichten von unten nach oben, Rahmen auf Rahmen. Lose Teile (z. B. Hawaii in Schicht 3 und 4) und die Kontinente aus Schicht 5 klebst du mittig auf die jeweils größere Form darunter, die rundherum etwa 3–4 mm übersteht. Zum Aufhängen eignet sich ein Zackenaufhänger auf der Rückseite, alternativ stellst du die Karte in die zwei Aufsteller.
+
+**Anpassen** (`tools/weltkarte.py`): Größe `W_OUT`, Rahmenbreite `FRAME`, Abstand der Tiefenlinien `LEVELS`, Wellung `NOISE`/`SEED`, Materialstärke `MAT` (für den Aufsteller-Schlitz). Neu erzeugen:
+
+```bash
+pip install shapely pyproj scipy scikit-image cairosvg pillow numpy fonttools
+python3 tools/weltkarte.py
+```
+
+Kartendaten: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (Public Domain), Robinson-Projektion, ohne Antarktis.
