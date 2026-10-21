@@ -117,3 +117,27 @@ Alle Dateien liegen in `entwuerfe/07_pixel-wichtelwelt/`. Sie passen jeweils auf
 pip install shapely fonttools cairosvg pillow numpy
 python3 tools/wichtelwelt.py
 ```
+
+---
+
+# Wichtelwelt klassisch
+
+![Wichtelwelt klassisch Mockup](entwuerfe/08_wichtelwelt-klassisch/08_wichtelwelt-klassisch_mockup.jpg)
+
+Das klassische Gegenstück zur Pixel-Wichtelwelt. Es hat runde Bögen, Natursteine, Holzmaserung und Schreibschrift. Das Stecksystem ist dasselbe: Zapfen 10 × 3 mm, Bodenplatte 310 × 125 mm mit Schlitzen von 2,9 mm und einer geschwungenen Schneekante vorne.
+
+| Datei | Teile | Fläche (mm) |
+|-------|-------|-------------|
+| `08a_wichteltuer.svg` | Türrahmen als Steinbogen (86 × 128 mm) · Türblatt mit Bretterfugen, Maserung, Rundfenster, Langbändern, Knauf, Schlüsselloch und Türklopfer (wird aufgeklebt) · Wichtelfenster mit Herz-Fensterläden · Fußmatte „Willkommen“ · Leiter | 228 × 239 |
+| `08b_figuren.svg` | Tannenbaum mit Stern und Kugeln · Wichtel mit Zipfelmütze und Bart · Wegweiser „Nordpol / Wichtelweg“ · Briefkasten „Post“ · Laterne mit Kerze | 329 × 146 |
+| `08c_bodenplatte.svg` | Bodenplatte mit Trittsteinen, Schneeflocken und „Wichtelweg 24“ · Schneemann · Brennholzstapel · Geschenk · Wunschbrief (Anhänger) · Passungstest | 320 × 196 |
+
+Alle Dateien liegen in `entwuerfe/08_wichtelwelt-klassisch/`. Sie nutzen dieselben Farben wie oben (Rot = Schneiden, Blau = Gravieren, Schwarz = Linie).
+
+**Tipps:**
+- Das **Wichtelfenster** ist für die Wand gedacht. Klebst du es neben die Tür, sieht es aus, als würde der Wichtel dort wohnen.
+- Hinter die **Laterne** passt ein winziges LED-Licht. Die Kerze steht als Steg im Fenster.
+- Schneemann, Brennholz und Geschenk haben keine Zapfen. Du klebst sie hochkant auf die Platte oder lehnst sie an. Den Wunschbrief kannst du an den Baum hängen.
+- Zum Bemalen: Mütze rot, Mantel grün oder grau, Tür mit Beize dunkler. Die Steine sehen mit verdünnter grauer Acrylfarbe gut aus.
+
+Neu erzeugen: `python3 tools/wichtelwelt_klassisch.py` (dieselben Pakete wie bei der Pixel-Wichtelwelt). Texte wie „Willkommen“, „Nordpol“ oder „Wichtelweg 24“ änderst du direkt im Code.
