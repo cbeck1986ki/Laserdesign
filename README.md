@@ -87,3 +87,33 @@ python3 tools/weltkarte.py
 ```
 
 Kartendaten: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (Public Domain), Robinson-Projektion, ohne Antarktis.
+
+---
+
+# Pixel-Wichtelwelt (8-Bit-Diorama)
+
+![Pixel-Wichtelwelt Mockup](entwuerfe/07_pixel-wichtelwelt/07_pixel-wichtelwelt_mockup.jpg)
+
+Eine kleine, nerdige Weihnachtswichtelwelt im Retro-Pixel-Look: Alle Konturen sind aus quadratischen „Pixeln“ aufgebaut, alle Texte in einer eigenen 5×7-Pixelschrift. Die stehenden Teile haben **Steckzapfen** (10 mm breit, 3 mm tief) und stecken in den Schlitzen der Bodenplatte (310 × 125 mm, Tron-Raster). Du kannst jedes Teil aber auch allein aufstellen, zum Beispiel die Tür an die Fußleiste. Die Zapfen schleifst du dann einfach ab.
+
+| Datei | Teile | Fläche (mm) |
+|-------|-------|-------------|
+| `07a_wichteltuer.svg` | Türrahmen mit Pixel-Ziegeln, „LVL 24“ und Tastenfeld · Türblatt mit 4 Fensterscheiben (wird aufgeklebt) · Fußmatte „PRESS START“ · Leiter | 258 × 125 |
+| `07b_figuren.svg` | Pixel-Wichtel · Pixel-Tannenbaum mit LED-Löchern · Server „NORDPOL“ · Retro-Terminal „C:\>WICHTEL“ · Schild „404 – Wichtel not found“ · Tastatur | 274 × 194 |
+| `07c_bodenplatte.svg` | Bodenplatte mit Schlitzen, Pixel-Fußspuren und „PLAYER 1“ · Herz · 3 Münzen · Geschenk · Diskette „Wunschliste“ (Anhänger) · Passungstest | 320 × 176 |
+
+Alle Dateien liegen in `entwuerfe/07_pixel-wichtelwelt/`. Sie passen jeweils auf die Arbeitsfläche des D1 Pro und nutzen dieselben Farben wie oben (Rot = Schneiden, Blau = Gravieren, Schwarz = Linie).
+
+**Tipps:**
+- Schneide zuerst den **Passungstest** und prüf, welcher Schlitz stramm auf den Zapfen sitzt. Die Bodenplatte ist auf **2,9 mm** ausgelegt (`SLOT` in `tools/designs.py`).
+- Das **Türblatt** klebst du mittig auf den Rahmen, unten bündig. Die Fensterscheiben fallen heraus, dahinter ist der Rahmen dunkel graviert. Das sieht aus wie ein Blick ins Innere.
+- Hinter die Löcher im **Tannenbaum** (LEDs) und im **Server** (Status-LEDs) passt eine kleine LED-Lichterkette. Der Effekt wird noch schöner, wenn du Transparentpapier dahinterklebst.
+- **Fußmatte** und **Tastatur** liegen flach auf der Platte. Münzen und Herz kannst du an Draht über den Wichtel hängen (Sprung-Szene). Die Diskette hängt an ihrem Schieber-Loch am Baum.
+- Farbe: Wichtelmütze rot, Bildschirm grün oder schwarz, Herz rot, Münzen gold. Mit Acryl-Lackstift kannst du die gravierten Flächen ausmalen.
+
+**Anpassen** in `tools/wichtelwelt.py`: Die Sprites (Wichtel, Baum, Herz, Münze, Geschenk) sind ASCII-Raster. Ein `#` ist ein Holzpixel, `E` eine Gravur und `o` ein Loch. Texte änderst du direkt im Code, zum Beispiel `"LVL 24"`, `"HO HO HO!_"` oder `"PLAYER 1"`. Neu erzeugen:
+
+```bash
+pip install shapely fonttools cairosvg pillow numpy
+python3 tools/wichtelwelt.py
+```
