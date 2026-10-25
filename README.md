@@ -87,3 +87,62 @@ python3 tools/weltkarte.py
 ```
 
 Kartendaten: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (Public Domain), Robinson-Projektion, ohne Antarktis.
+
+---
+
+# Halloween-Deko für die Candybar
+
+![Halloween Laser-Übersicht](entwuerfe/halloween/uebersicht_laser.jpg)
+
+Alles liegt in `entwuerfe/halloween/`: sechs Holzentwürfe für den **xTool D1 Pro** (`laser/`) und sechs Schneidedateien für den **Schneideplotter** (`plotter/`). Für die Laserdateien gilt dieselbe Farblogik wie oben (Rot = Schneiden, Blau = Gravieren, Schwarz = Linie). Ausgelegt sind sie für **3 mm Pappel- oder Lindensperrholz**.
+
+## Laser (xTool D1 Pro)
+
+| # | Entwurf | Teile | Fläche (mm) | Datei |
+|---|---------|-------|-------------|-------|
+| 1 | Candy-Bar-Schild „Candy Bar – Süßes oder Saures“ mit Kürbis und Fledermäusen, 2 Standfüße | 3 | 305 × 202 | `laser/01_candybar-schild/01_candybar-schild.svg` |
+| 2 | Laterne 90 × 90 × 110 mm: Kürbisgesicht vorne, Friedhof auf den Seiten, Mond und Fledermäuse hinten | 5 | 292 × 236 | `laser/02_kuerbis-laterne/02_kuerbis-laterne.svg` |
+| 3 | Anhänger für Bonbongläser: Hexenküsse, Geisterspucke, Zombiefinger, Gummiwürmer, Fledermäuse, Monsteraugen | 6 | 258 × 155 | `laser/03_glas-anhaenger/03_glas-anhaenger.svg` |
+| 4 | Steckfiguren Gespenst, Kürbis und Katze (ca. 130 mm), jede mit Standfuß | 6 | 263 × 296 | `laser/04_steckfiguren/04_steckfiguren.svg` |
+| 5 | Lustige Grabsteine „R.I.P. der letzte Lolli“, „Hier ruht Graf Karies“, „Achtung! Nimm nur zwei!“ | 6 | 260 × 170 | `laser/05_grabsteine/05_grabsteine.svg` |
+| 6 | Fledermaus-Girlande (8 Fledermäuse, 64–96 mm) und Spinnennetz Ø 150 mm mit Spinne | 9 | 290 × 305 | `laser/06_fledermaus-girlande/06_fledermaus-girlande.svg` |
+
+Jeder Ordner enthält zusätzlich ein Mockup (`*_mockup.jpg`) und eine Laservorschau (`*_laservorschau.png`). Die Startwerte und die Reihenfolge (gravieren → Linie → schneiden) aus der Tabelle oben gelten auch hier.
+
+**Tipps**
+- **Standfüße (Schild, Figuren, Grabsteine):** Die Figur hat unten einen Schlitz, der Fuß oben einen. Beide werden über Kreuz gesteckt. Schlitzbreite ist **2,9 mm** wie beim Tannenbaum. Mach vorher den Passungstest aus Entwurf 2 der Weihnachtsdeko und pass `SLOT` in `tools/designs.py` an, falls nötig. Das Schild hat außerdem zwei Löcher (Ø 5 mm), damit du es auch aufhängen kannst.
+- **Bemalen:** Kürbis orange, Katze und Fledermäuse schwarz, Gespenst weiß, Grabsteine grau (Kreide- oder Acrylfarbe). Gravur und Linien bleiben sichtbar, wenn du dünn lasierst oder erst nach dem Malen gravierst.
+- **Laterne:** Gleicher Aufbau wie die Weihnachtslaterne (Fingerzinken, Boden mit Loch für den Schalter). Orangefarbenes Transparentpapier innen sieht toll aus. ⚠️ **Nur LED-Teelichter!**
+- **Girlande:** Fädle eine Schnur durch die beiden Flügellöcher. Das Spinnennetz ist sehr filigran (Stege 2,6 mm), deshalb mit Air Assist und eher langsam schneiden.
+- **Glas-Anhänger:** Die Namen kannst du in XCS ändern. Für die Kordel gibt es oben ein Loch mit Ø 4,4–4,8 mm, damit sich der Anhänger um den Glashals binden lässt.
+
+## Schneideplotter (Folie, Karton)
+
+![Candybar mit Folienplot](entwuerfe/halloween/plotter/candybar_folienplot_mockup.jpg)
+
+| # | Motiv | Größe (mm) | Idee |
+|---|-------|------------|------|
+| 1 | „Süßes oder Saures!“ mit 2 Fledermäusen | 300 × 137 | Orange Folie auf die Holzfront der Candybar |
+| 2 | „Candy Bar“ mit 3 Fledermäusen | 300 × 130 | Über der Bar oder auf dem Schild |
+| 3 | Fledermausschwarm, 20 Stück (25–110 mm) | 288 × 276 | Wand, Spiegel, Holz; aus schwarzem Tonkarton und mit hochgeknickten Flügeln wirkt er 3D |
+| 4 | Spinnennetz-Ecke mit Spinne | 271 × 282 | Weiße Folie in die Ecken; für die zweite Ecke spiegeln |
+| 5 | 6 Gesichter (3 Kürbis, 3 Gespenst), je 90 mm | 268 × 97 | Schwarz auf orange oder weiße Gläser, Becher, Tüten |
+| 6 | 6 Sortennamen (passend zu den Laser-Anhängern) | 270 × 101 | Direkt auf die Bonbongläser |
+
+Jedes Motiv gibt es als **SVG** (Cricut Design Space, Silhouette Studio ab Designer Edition, Brother CanvasWorkspace, Inkscape) und als **DXF R12** (läuft auch in Silhouette Studio Basic), dazu eine PNG-Vorschau. Die Dateien sind im Maßstab 1:1 in mm angelegt und passen auf eine 12″-Schneidematte (305 mm). Prüf nach dem Import die Größe: Manche Programme rechnen in Zoll oder Pixel um.
+
+- **Klebefolie (Vinyl)** wird nicht gespiegelt. **Flex- oder Bügelfolie** (z. B. für Stoffbeutel) musst du vor dem Schneiden **spiegeln**.
+- Auf Glas hält normale Plotterfolie gut und lässt sich nach Halloween rückstandsfrei abziehen. Für Holz eignet sich matte Folie, die sieht hochwertiger aus.
+- Fürs Entgittern kannst du in der Plottersoftware einen Rahmen um jedes Motiv ziehen.
+
+## Neu erzeugen und anpassen
+
+```bash
+pip install shapely fonttools cairosvg pillow numpy
+python3 tools/build_halloween.py
+```
+
+- `tools/halloween.py`: alle Formen (Fledermaus, Kürbis, Gespenst, Katze, Grabstein, Spinnennetz), Texte und Plotter-Motive
+- `tools/build_halloween.py`: Export (Laser-SVG, Plotter-SVG und DXF), Vorschauen und Mockups
+
+Die Schrift *Creepster* steht unter der SIL Open Font License (siehe `tools/fonts/OFL-Creepster.txt`).
